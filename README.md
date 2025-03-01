@@ -10,6 +10,8 @@ View(indo_rct)
 columns_with_missing <- sum(sapply(indo_rct, function(x) any(is.na(x))))
 print(columns_with_missing)
 
+
+#Focus on patients at site 1#
 filtered_data <- indo_rct %>%
   select(-bleed) %>%
   filter(site == "1_UM", status == "1_outpatient")
@@ -53,6 +55,8 @@ summary(model)
 
 #--------------------------------------------------------------#
 
+
+#Focus on patients at site 2#
 indo_rct %>%
   count(status == "1_outpatient")
 
@@ -107,6 +111,8 @@ summary(model2)
 
 
 # ------------------------------------------------------------#
+
+#Focus on patients on both sites together#
 
 #Data cleaning#
 
